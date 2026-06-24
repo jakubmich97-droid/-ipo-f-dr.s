@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Domácí dobroty | Zavařeniny & guláše</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="hero">
+    <nav class="navbar">
+      <div class="logo">Domácí dobroty</div>
+      <div class="nav-links">
+        <a href="#produkty">Produkty</a>
+        <a href="#ovyrobci">O výrobci</a>
+        <a href="#akce">Akce</a>
+        <a href="#objednavka">Objednávka</a>
+      </div>
+    </nav>
+
+    <div class="hero-content">
+      <p class="label">Poctivá domácí výroba</p>
+      <h1>Domácí zavařeniny, guláše a dobroty ze sklenice</h1>
+      <p>
+        Ručně vyráběné produkty z kvalitních surovin. Bez zbytečností,
+        s poctivou chutí domova.
+      </p>
+      <a href="#produkty" class="btn">Vybrat produkt</a>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="produkty" class="section">
+      <h2>Naše produkty</h2>
+      <p class="section-text">Vyberte si produkt a jednoduše odešlete objednávku.</p>
+
+      <div class="product-grid">
+
+        <article class="product-card">
+          <img src="images/marmelada.jpg" alt="Domácí jahodová marmeláda">
+          <div class="product-info">
+            <h3>Jahodová marmeláda</h3>
+            <p>Poctivá domácí marmeláda z jahod, ideální na pečivo i palačinky.</p>
+            <span class="price">129 Kč / 250 ml</span>
+            <button onclick="selectProduct('Jahodová marmeláda', '129 Kč / 250 ml')">
+              Objednat
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img src="images/gulas.jpg" alt="Domácí hovězí guláš">
+          <div class="product-info">
+            <h3>Hovězí guláš</h3>
+            <p>Silný domácí guláš ve skle. Stačí ohřát a podávat.</p>
+            <span class="price">189 Kč / 500 ml</span>
+            <button onclick="selectProduct('Hovězí guláš', '189 Kč / 500 ml')">
+              Objednat
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img src="images/cibulada.jpg" alt="Domácí cibuláda">
+          <div class="product-info">
+            <h3>Sladká cibuláda</h3>
+            <p>Výborná k masu, sýrům nebo burgerům.</p>
+            <span class="price">119 Kč / 200 ml</span>
+            <button onclick="selectProduct('Sladká cibuláda', '119 Kč / 200 ml')">
+              Objednat
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="ovyrobci" class="section about">
+      <div>
+        <p class="label">O výrobci</p>
+        <h2>Poctivá domácí výroba</h2>
+        <p>
+          Všechny produkty vznikají v malých dávkách s důrazem na chuť,
+          kvalitu a ruční práci. Každá sklenice je připravena tak,
+          jak bychom ji chtěli dát vlastní rodině.
+        </p>
+      </div>
+      <img src="images/vyrobce.jpg" alt="Výrobce domácích produktů">
+    </section>
+
+    <section id="akce" class="section promo">
+      <p class="label">Aktuální akce</p>
+      <h2>Sezónní nabídka</h2>
+      <p>
+        Tento měsíc balíček 3 domácích zavařenin za zvýhodněnou cenu.
+      </p>
+    </section>
+
+    <section id="objednavka" class="section order">
+      <h2>Objednávkový formulář</h2>
+
+      <form action="https://formsubmit.co/tvuj@email.cz" method="POST">
+        <label>Vybraný produkt</label>
+        <input type="text" id="productName" name="Produkt" readonly required>
+
+        <label>Cena</label>
+        <input type="text" id="productPrice" name="Cena" readonly>
+
+        <label>Počet kusů</label>
+        <input type="number" name="Počet kusů" min="1" value="1" required>
+
+        <label>Jméno</label>
+        <input type="text" name="Jméno" required>
+
+        <label>Telefon</label>
+        <input type="tel" name="Telefon" required>
+
+        <label>E-mail</label>
+        <input type="email" name="Email" required>
+
+        <label>Poznámka</label>
+        <textarea name="Poznámka" rows="4"></textarea>
+
+        <button type="submit" class="btn">Odeslat objednávku</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Domácí dobroty | Kontakt: info@email.cz</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
