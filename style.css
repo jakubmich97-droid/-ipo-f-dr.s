@@ -1,18 +1,12 @@
 :root {
   --bg: #050505;
-  --bg-soft: #111111;
   --card: #181818;
-  --card-light: #22110d;
-
   --text: #ffffff;
   --text-muted: #d5d5d5;
-
   --red: #e21b13;
-  --red-dark: #8f0f0a;
   --orange: #ff8a00;
   --yellow: #ffc13b;
   --green: #78b82a;
-
   --border: rgba(255, 255, 255, 0.12);
   --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
   --radius: 28px;
@@ -43,38 +37,30 @@ img {
 
 .site-header {
   min-height: 100vh;
-  padding: 24px 6% 80px;
+  padding: 150px 6% 80px;
   position: relative;
   overflow: hidden;
-  padding-top:150px;
-}
-
-.site-header::after {
-  content: "";
-  position: absolute;
-  inset: auto -12% -180px -12%;
-  height: 320px;
-  background: radial-gradient(circle, rgba(255, 138, 0, 0.18), transparent 68%);
-  pointer-events: none;
 }
 
 .navbar {
-  position:fixed;
+  position: fixed;
   top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(96%, 1650px);
   z-index: 20;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
+
   padding: 14px 18px;
   border: 1px solid var(--border);
   border-radius: 999px;
   background: rgba(5, 5, 5, 0.78);
   backdrop-filter: blur(18px);
   box-shadow: var(--shadow);
-  left:50%;
-  transform:translateX(-50%);
-  width:min(96%,1650px);
 }
 
 .brand {
@@ -84,7 +70,6 @@ img {
   color: var(--text);
   text-decoration: none;
   font-weight: 900;
-  letter-spacing: 0.4px;
 }
 
 .brand-logo {
@@ -93,9 +78,9 @@ img {
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid rgba(255, 255, 255, 0.85);
+  background: white;
+  padding: 3px;
   box-shadow: 0 0 28px rgba(226, 27, 19, 0.35);
-  background:white;
-  padding:3px;
 }
 
 .brand-text {
@@ -129,17 +114,19 @@ img {
   position: relative;
   padding: 90px 6%;
   margin: 0 -6%;
-  background:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.78) 34%, rgba(0, 0, 0, 0.25) 62%, rgba(0, 0, 0, 0.05) 100%),
-    url("images/foods/gulas.png") center right / cover no-repeat;
   overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.94) 0%, rgba(0, 0, 0, 0.78) 34%, rgba(0, 0, 0, 0.25) 62%, rgba(0, 0, 0, 0.04) 100%),
+    url("images/foods/gulas.png") center right / cover no-repeat;
 }
 
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at right center, rgba(255, 80, 0, 0.16), transparent 42%);
+  background:
+    radial-gradient(circle at right center, rgba(255, 80, 0, 0.18), transparent 42%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.28));
   pointer-events: none;
 }
 
@@ -159,7 +146,17 @@ img {
   text-transform: uppercase;
 }
 
-
+.hero h1 {
+  margin: 0 0 26px;
+  max-width: 760px;
+  font-size: clamp(48px, 5.6vw, 88px);
+  font-weight: 950;
+  line-height: 0.98;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.65);
+}
 
 .hero h1 span {
   color: #ef2418;
@@ -172,15 +169,6 @@ img {
   color: #dedede;
   line-height: 1.55;
   text-shadow: 0 3px 12px rgba(0, 0, 0, 0.7);
-}
-
-.hero-content > p:not(.label),
-.section-text,
-.about p,
-.promo p {
-  color: var(--text-muted);
-  font-size: 19px;
-  line-height: 1.7;
 }
 
 .hero-actions {
@@ -218,30 +206,6 @@ img {
   box-shadow: none;
 }
 
-.hero-card {
-  padding: 34px;
-  border-radius: var(--radius);
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.03)),
-    rgba(0, 0, 0, 0.42);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-  transform: rotate(2deg);
-}
-
-.hero-card img {
-  width: min(100%, 420px);
-  margin: 0 auto;
-  border-radius: 24px;
-}
-
-.hero-card p {
-  margin: 22px 0 0;
-  color: var(--text-muted);
-  text-align: center;
-  font-weight: 800;
-}
-
 .section {
   padding: 90px 6%;
 }
@@ -251,8 +215,35 @@ img {
   margin-bottom: 36px;
 }
 
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 16px;
+  color: var(--yellow);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-size: 13px;
+}
+
+.label::before {
+  content: "🌶️";
+}
+
 .section h2 {
+  margin: 0;
   font-size: clamp(36px, 5vw, 62px);
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.section-text,
+.about p,
+.promo p {
+  color: var(--text-muted);
+  font-size: 19px;
+  line-height: 1.7;
 }
 
 .product-grid {
@@ -422,14 +413,26 @@ footer {
   background: rgba(0, 0, 0, 0.56);
 }
 
+.hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @media (max-width: 900px) {
   .site-header {
     min-height: auto;
-    padding-bottom: 60px;
+    padding: 120px 18px 60px;
   }
 
   .navbar {
-    align-items: flex-start;
+    width: calc(100% - 28px);
+    top: 14px;
     border-radius: 28px;
   }
 
@@ -437,18 +440,26 @@ footer {
     display: none;
   }
 
-  .hero,
+  .hero {
+    min-height: 620px;
+    padding: 80px 22px;
+    margin: 0 -18px;
+    background:
+      linear-gradient(180deg, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.7) 48%, rgba(0, 0, 0, 0.35) 100%),
+      url("images/foods/gulas.png") center right / cover no-repeat;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
   .about,
   .product-grid {
     grid-template-columns: 1fr;
-  }
-
-  .hero {
-    padding-top: 70px;
-  }
-
-  .hero-card {
-    transform: none;
   }
 
   .promo {
@@ -462,39 +473,17 @@ footer {
     display: none;
   }
 
-  .site-header,
+  .brand-logo {
+    width: 54px;
+    height: 54px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
   .section {
     padding-left: 18px;
     padding-right: 18px;
   }
-
-  .hero h1 {
-    font-size: 42px;
-  }
-}
-.hidden {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.6s ease;
-}
-
-.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-.hero {
-  min-height: 620px;
-  padding: 80px 22px;
-  margin: 0 -18px;
-  background:
-    linear-gradient(180deg, rgba(0, 0, 0, 0.86) 0%, rgba(0, 0, 0, 0.68) 48%, rgba(0, 0, 0, 0.35) 100%),
-    url("images/foods/gulas.png") center right / cover no-repeat;
-}
-
-.hero h1 {
-  font-size: 42px;
-}
-
-.hero p {
-  font-size: 18px;
 }
